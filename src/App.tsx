@@ -5,7 +5,6 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import PresentationGen from './pages/PresentationGen';
 import ImageGen from './pages/ImageGen';
-import VideoGen from './pages/VideoGen';
 import HomeworkAI from './pages/HomeworkAI';
 
 export default function App() {
@@ -33,7 +32,6 @@ export default function App() {
     switch (currentPath) {
       case '/presentations': return <PresentationGen />;
       case '/images': return <ImageGen />;
-      case '/videos': return <VideoGen />;
       case '/homework': return <HomeworkAI />;
       default: return <Home onNavigate={navigate} />;
     }

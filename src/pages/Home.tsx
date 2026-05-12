@@ -50,7 +50,7 @@ export default function Home({ onNavigate }: { onNavigate: (path: string) => voi
           >
             <div className="relative rounded-3xl overflow-hidden border border-white/10 shadow-[0_0_50px_rgba(79,70,229,0.15)] max-w-5xl mx-auto group">
               <img 
-                src="/src/assets/images/regenerated_image_1778619347478.jpg" 
+                src="/src/assets/images/regenerated_image_1778619512293.jpg" 
                 alt="Forz KI Background" 
                 className="w-full grayscale-[0.3] group-hover:grayscale-0 transition-all duration-700 object-cover min-h-[400px]"
                 referrerPolicy="no-referrer"
