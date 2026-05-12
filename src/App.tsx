@@ -9,12 +9,12 @@ import VideoGen from './pages/VideoGen';
 import HomeworkAI from './pages/HomeworkAI';
 
 export default function App() {
-  const [currentPath, setCurrentPath] = useState(window.location.pathname);
+  const [currentPath, setCurrentPath] = useState(window.location.hash.replace('#', '') || '/');
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     // Handle browser navigation
-    const handlePopState = () => setCurrentPath(window.location.pathname);
+    const handlePopState = () => setCurrentPath(window.location.hash.replace('#', '') || '/');
     window.addEventListener('popstate', handlePopState);
     
     // Simulate initial load
@@ -24,7 +24,7 @@ export default function App() {
   }, []);
 
   const navigate = (path: string) => {
-    window.history.pushState({}, '', path);
+    window.location.hash = path;
     setCurrentPath(path);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -52,7 +52,7 @@ export default function App() {
         >
           <div className="w-10 h-10 border-4 border-white/20 border-t-white rounded-full animate-spin" />
         </motion.div>
-        <div className="text-zinc-500 font-bold tracking-[0.3em] uppercase text-xs animate-pulse">Lade ForzAI</div>
+        <div className="text-zinc-500 font-bold tracking-[0.3em] uppercase text-xs animate-pulse">Lade ForzKI</div>
       </div>
     );
   }

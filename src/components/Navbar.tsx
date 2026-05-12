@@ -37,7 +37,7 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
             <Cpu className="text-white w-6 h-6" />
           </div>
           <span className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400 tracking-tighter">
-            ForzAI
+            ForzKI
           </span>
         </button>
 

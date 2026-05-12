@@ -79,7 +79,7 @@ export default function Home({ onNavigate }: { onNavigate: (path: string) => voi
               {
                 icon: Brain,
                 title: "Integrierte Intelligenz",
-                desc: "Mehr als nur Vorlagen. ForzAI versteht den Kontext und liefert präzise, menschenähnliche Ergebnisse.",
+                desc: "Mehr als nur Vorlagen. ForzKI versteht den Kontext und liefert präzise, menschenähnliche Ergebnisse.",
                 color: "text-purple-400",
                 bg: "bg-purple-600/10"
               },
@@ -114,7 +114,7 @@ export default function Home({ onNavigate }: { onNavigate: (path: string) => voi
           <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-400/10 blur-[80px] rounded-full" />
           <h2 className="text-4xl md:text-6xl font-bold text-white mb-8 tracking-tighter">Bereit für die Zukunft?</h2>
           <p className="text-xl text-indigo-200/60 mb-10 max-w-xl mx-auto">
-            Schließen Sie sich tausenden von Profis an, die ihren Alltag bereits mit ForzAI transformieren.
+            Schließen Sie sich tausenden von Profis an, die ihren Alltag bereits mit ForzKI transformieren.
           </p>
           <button className="bg-white text-black px-10 py-4 rounded-full font-bold text-lg hover:bg-zinc-200 transition-all shadow-xl">
             Jetzt kostenlos anmelden

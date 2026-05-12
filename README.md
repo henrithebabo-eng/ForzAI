@@ -1,20 +1,28 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# ForzAI - KI Website
 
-# Run and deploy your AI Studio app
+Dies ist eine leistungsstarke KI-Plattform, die für das Web optimiert wurde.
 
-This contains everything you need to run your app locally.
+## Hosting auf GitHub Pages
 
-View your app in AI Studio: https://ai.studio/apps/4822234a-44f9-4f0d-8609-811cc7e0424b
+Diese Website ist für das Hosting auf GitHub Pages vorkonfiguriert. 
 
-## Run Locally
+1. Lade diesen Code in ein GitHub-Repository hoch.
+2. Gehe zu **Settings** > **Pages**.
+3. Wähle unter **Build and deployment** > **Source** die Option `GitHub Actions`.
+4. Gehe zu **Settings** > **Secrets and variables** > **Actions** und füge folgende Secrets hinzu:
+   - `GROQ_API_KEY`: Dein Groq API Key
+   - `OPENAI_API_KEY`: Dein OpenAI API Key
 
-**Prerequisites:**  Node.js
+Sobald du den Code pushst, wird die Website automatisch gebaut und veröffentlicht.
 
+## Lokale Entwicklung
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+1. `npm install`
+2. `npm run dev`
+
+## Statischer Export (HTML Website)
+
+Wenn du die Website manuell als statische Dateien erhalten möchtest:
+
+1. Führe `npm run build` aus.
+2. Der Ordner `dist/` enthält die fertige "HTML Website". Du kannst diesen Ordner auf jeden beliebigen Webserver hochladen.
