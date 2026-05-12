@@ -61,9 +61,6 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
               )}
             </button>
           ))}
-          <button className="bg-white text-black px-5 py-2 rounded-full text-sm font-bold hover:bg-slate-200 transition-colors shadow-[0_0_20px_rgba(255,255,255,0.2)]">
-            Starten
-          </button>
         </div>
 
         {/* Mobile Toggle */}
@@ -99,9 +96,6 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                 {link.name}
               </button>
             ))}
-            <button className="bg-indigo-600 text-white px-5 py-3 rounded-xl text-center font-bold">
-              Kostenlos Starten
-            </button>
           </motion.div>
         )}
       </AnimatePresence>

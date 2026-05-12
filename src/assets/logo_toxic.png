@@ -1,0 +1,9 @@
+<IMAGE_DATA>
+{
+  "ImageName": "logo_toxic",
+  "Prompt": "A square icon featuring the green toxic cloud with a skull and crossbones from the user's image, but set against a solid deep black background. The green cloud should be vibrant and the skull clearly visible.",
+  "ImagePaths": [
+    "input_file_0.png"
+  ]
+}
+</IMAGE_DATA>

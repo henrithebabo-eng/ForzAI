@@ -123,7 +123,7 @@ export default function ImageGen() {
                 <img 
                   src={url} 
                   alt="Generated AI Art" 
-                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100"
+                  className="w-full h-full object-cover transition-all duration-700 scale-105 group-hover:scale-100"
                   referrerPolicy="no-referrer"
                 />
                 

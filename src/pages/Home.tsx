@@ -23,13 +23,13 @@ export default function Home({ onNavigate }: { onNavigate: (path: string) => voi
               Revolutionieren Sie Ihren Workflow mit KI
             </span>
             <h1 className="text-5xl md:text-8xl font-bold tracking-tighter mb-8 leading-[0.9]">
-              "Yurr Sup ma Ne" <br />
+              Wer Hat Das Gras <br /> Weggeraucht?<br />
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 animate-gradient-x">
-                -Anton
+                Der FBI-Agent
               </span>
             </h1>
             <p className="text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
-              Alter ihr habt auch kein mehr auf Lern Bunker? Dann Benutzt ForzKI
+              Alta kein bock auf Lern Bunker? Dann ForzKI.(Oder Taxiteller)
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <button 
@@ -38,9 +38,6 @@ export default function Home({ onNavigate }: { onNavigate: (path: string) => voi
               >
                 Kostenlos testen
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </button>
-              <button className="w-full sm:w-auto bg-white/5 text-white border border-white/10 px-8 py-4 rounded-2xl font-bold text-lg hover:bg-white/10 transition-all">
-                Demo ansehen
               </button>
             </div>
           </motion.div>
@@ -51,14 +48,24 @@ export default function Home({ onNavigate }: { onNavigate: (path: string) => voi
             transition={{ delay: 0.3, duration: 0.8 }}
             className="mt-20 relative px-4"
           >
-            <div className="relative rounded-3xl overflow-hidden border border-white/10 shadow-[0_0_50px_rgba(79,70,229,0.15)] max-w-5xl mx-auto">
+            <div className="relative rounded-3xl overflow-hidden border border-white/10 shadow-[0_0_50px_rgba(79,70,229,0.15)] max-w-5xl mx-auto group">
               <img 
-                src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=2000" 
-                alt="AI Dashboard Preview" 
-                className="w-full grayscale-[0.5] hover:grayscale-0 transition-all duration-700"
+                src="/src/assets/images/regenerated_image_1778619347478.jpg" 
+                alt="Forz KI Background" 
+                className="w-full grayscale-[0.3] group-hover:grayscale-0 transition-all duration-700 object-cover min-h-[400px]"
                 referrerPolicy="no-referrer"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent" />
+              <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-transparent transition-colors duration-700">
+                <motion.h2 
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.8, duration: 0.8 }}
+                  className="text-7xl md:text-[10rem] font-black text-white tracking-tighter drop-shadow-[0_10px_50px_rgba(0,0,0,0.8)] select-none pointer-events-none"
+                >
+                  Forz KI
+                </motion.h2>
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent opacity-60" />
             </div>
           </motion.div>
         </div>

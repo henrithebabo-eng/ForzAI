@@ -1,0 +1,9 @@
+<IMAGE_DATA>
+{
+  "ImageName": "twin_towers_nyc",
+  "Prompt": "The uploaded photo of the New York City skyline featuring the Twin Towers and the Statue of Liberty.",
+  "ImagePaths": [
+    "input_file_0.png"
+  ]
+}
+</IMAGE_DATA>

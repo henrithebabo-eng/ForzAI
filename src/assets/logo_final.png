@@ -1,0 +1,9 @@
+<IMAGE_DATA>
+{
+  "ImageName": "logo_final",
+  "Prompt": "The identical green toxic cloud with a skull and crossbones from the user's image.",
+  "ImagePaths": [
+    "input_file_0.png"
+  ]
+}
+</IMAGE_DATA>

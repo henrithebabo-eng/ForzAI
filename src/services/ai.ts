@@ -1,5 +1,4 @@
 import Groq from "groq-sdk";
-import OpenAI from "openai";
 
 const getGroq = () => {
   const apiKey = process.env.GROQ_API_KEY;
@@ -60,44 +59,38 @@ export const AIService = {
     }
   },
 
-  // 2. Image Generator using OpenAI with Free Fallback (Pollinations.ai)
+  // 2. Image Generator using Groq for Prompt Enhancement + Free Fallback (Pollinations.ai)
   async generateImage(prompt: string, style: string) {
-    const openaiKey = process.env.OPENAI_API_KEY;
-    const fallbackUrl = `https://image.pollinations.ai/prompt/${encodeURIComponent(prompt + " " + style)}?width=1024&height=1024&nologo=true&seed=${Math.floor(Math.random() * 1000000)}`;
-
-    if (!openaiKey) {
-      return fallbackUrl;
+    const groqKey = process.env.GROQ_API_KEY;
+    const fallbackUrlBase = "https://image.pollinations.ai/prompt/";
+    
+    let enhancedPrompt = `${prompt} in ${style} style. professional, high quality, detailed.`;
+    
+    // Use Groq to enhance the prompt if key is available
+    if (groqKey) {
+      try {
+        const groq = new Groq({ apiKey: groqKey, dangerouslyAllowBrowser: true });
+        const completion = await groq.chat.completions.create({
+          messages: [
+            { 
+              role: "system", 
+              content: "You are a professional prompt engineer for AI image generators. Expand the user's short prompt into a detailed, descriptive artistic masterpiece prompt. Keep it in English. Limit to 300 characters." 
+            },
+            { role: "user", content: `Prompt: ${prompt}, Style: ${style}` }
+          ],
+          model: "llama-3.3-70b-versatile",
+          max_tokens: 150,
+        });
+        
+        enhancedPrompt = completion.choices[0]?.message?.content || enhancedPrompt;
+      } catch (error) {
+        console.warn("Groq prompt enhancement failed, using basic prompt.", error);
+      }
     }
 
-    try {
-      const openai = new OpenAI({ apiKey: openaiKey, dangerouslyAllowBrowser: true });
-      const response = await openai.images.generate({
-        model: "dall-e-3",
-        prompt: `A professional, high-quality image of: ${prompt}. Artistic style: ${style}.`,
-        n: 1,
-        size: "1024x1024",
-        response_format: "b64_json"
-      });
-
-      const b64Data = response.data[0].b64_json;
-      if (b64Data) {
-        return `data:image/png;base64,${b64Data}`;
-      }
-      return fallbackUrl;
-    } catch (error: any) {
-      console.error("OpenAI Image Error (using free fallback):", error);
-      // If billing limit or quota reached, use the free fallback
-      if (
-        error?.message?.includes("hard limit") || 
-        error?.message?.includes("billing") || 
-        error?.message?.includes("quota") ||
-        error?.status === 400 ||
-        error?.status === 429
-      ) {
-        return fallbackUrl;
-      }
-      throw error;
-    }
+    // Use Pollinations.ai for the actual image generation (since Groq doesn't do images)
+    const encodedPrompt = encodeURIComponent(enhancedPrompt);
+    return `${fallbackUrlBase}${encodedPrompt}?width=1024&height=1024&nologo=true&seed=${Math.floor(Math.random() * 1000000)}`;
   },
 
   // 3. Video Generator (Currently disabled)
