@@ -1,0 +1,12 @@
+{
+  "name": "ForzAI",
+  "description": "Premium KI-Plattform für Präsentationen, Bilder und Hausaufgaben-Hilfe.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ],
+  "majorCapabilities": [
+    "AI Content Generation",
+    "Educational Tools"
+  ]
+}
